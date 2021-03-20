@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Username is not available!
+            </div>
+        </div>
+    </div>
+</div>
+
+    <form action="/register" method="post" class="needs-validation cuser" novalidate>
+
+        <!-- field for input username -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus maxlength="24" class="form-control" name="username" id="username" placeholder="Username" type="text" required >
+
+            <!-- Validation for invaild input -->
+            <div class="invalid-feedback">Please Provide a Username!</div>
+        </div>
+
+        <!-- field for input password -->
+        <div class="form-group">
+            <input maxlength="24" class="form-control" id="password" name="password" placeholder="Password" type="password" onkeyup='check();' required>
+
+            <!-- Validation for invaild input -->
+            <div class="invalid-feedback">Please Provide a Password!</div>
+        </div>
+
+        <!-- field for input password again-->
+        <div class="form-group">
+            <input maxlength="24" class="form-control" id="confirmation" name="confirmation" placeholder="Password (again)" type="password" onkeyup='check();' required>
+
+            <div><span id='message'></span></div>
+
+            <!-- Validation for invaild input -->
+            <div class="invalid-feedback">Please comfirm your password!</div>
+        </div>
+
+        <!-- Register Button -->
+        <button class="btn btn-primary" id="mybutton" type="submit">Register</button>
+
+    </form>
+{% endblock %}
