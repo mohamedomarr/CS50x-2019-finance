@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Username is not available!
+            </div>
+        </div>
+    </div>
+</div>
+
+    <form action="/settings" method="post">
+        <h1>User Settings</h1>
+
+        <div class="form-group">
+        <h4 style="color: #007bff;">Hello, {{ username }}</h4>
+        </div>
+
+
+        <h6>What do you want to change?</h6>
+        <div class="form-group btn-group btn-group-toggle" data-toggle="buttons">
+
+            <label class="btn btn-outline-primary">
+                <input type="radio" value="username" name="username" onchange="myform(this.value);" id="option2" autocomplete="off">Username</label>
+
+            <label class="btn btn-outline-primary">
+                <input type="radio" value="password" name="password" onchange="myform(this.value);" id="option3" autocomplete="off">Password</label>
+        </div>
+    </form>
+
+    <div id="settingform">
+
+    </div>
+{% endblock %}
