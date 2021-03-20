@@ -2,4 +2,3 @@ cs50==6.0.3
 Flask==1.1.2
 Flask-Session==0.3.2
 requests==2.25.1
-python
